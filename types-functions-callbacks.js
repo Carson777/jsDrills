@@ -143,7 +143,7 @@ if (typeof a && b === 'string'){
 		}
 	
 } 
-
+console.log("bob loblaw's law blog")
 console.assert(justOneString('a',5) === true)
 console.assert(justOneString(6,'dotron') === true)
 console.assert(justOneString('peanut','butter') === false)

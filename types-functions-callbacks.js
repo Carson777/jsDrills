@@ -143,7 +143,7 @@ if (typeof a && b === 'string'){
 		}
 	
 } 
-console.log("bob loblaw's law blog")
+
 console.assert(justOneString('a',5) === true)
 console.assert(justOneString(6,'dotron') === true)
 console.assert(justOneString('peanut','butter') === false)
@@ -159,8 +159,9 @@ console.assert(justOneString(8,null) === false)
 // modify global variables, although that's not a good
 // pattern for production code.
 
-var doTwice = function(a){
-	
+var doTwice = function(inputFunction){
+	inputFunction()
+	inputFunction()
 }
 var NUMBER = 10
 
@@ -185,6 +186,11 @@ console.assert(NUMBER === 48)
 // the value of a certain global variable, called ORACLE, is 
 // "YES." Otherwise, it will does nothing.
 
+var conditionallyInvoke = function(inputFunction){
+	if(ORACLE){
+		inputFunction()
+	}
+}
 var ORACLE = 'NO'
 
 conditionallyInvoke(doubleGlobalNumber)
